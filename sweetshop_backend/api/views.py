@@ -6,8 +6,13 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from .models import Sweet
 from .serializers import SweetSerializer
-
+from django.http import JsonResponse
 #auth
+def home(request):
+    return JsonResponse({
+        "status": "ok",
+        "message": "SweetShop API is running"
+    })
 class RegisterView(APIView):
     def post(self, request):
         username = request.data.get("username")
