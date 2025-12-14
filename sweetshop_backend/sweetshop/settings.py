@@ -56,7 +56,9 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
-CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS", "").split(",")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
