@@ -124,6 +124,9 @@ TDD approach followed: wrote tests first, then implemented the feature, and refa
 ```bash
 python manage.py test
 ```
+## Deplyment
+Deployed on Render : https://sweetshop-frontend-9g5r.onrender.com
+
 ## GitHub Repository
 
 https://github.com/Yashwant176/sweetshop
