@@ -1,0 +1,21 @@
+services:
+
+  backend:
+    build:
+      context: ./sweetshop_backend
+      args:
+        SECRET_KEY: django-insecure-dev-key-123456
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=django-insecure-dev-key-123456
+      - DEBUG=1
+    restart: always
+
+  frontend:
+    build: ./sweetshop_frontend/sweetshop_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: always
